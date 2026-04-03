@@ -7,6 +7,93 @@
 
 const bool run_tests = false;
 
+char *int_to_binary(int in) {
+	char buffer[17];
+	if (in % (2 << 16) == 0) {
+		buffer[0] = '1';
+	} else {
+		buffer[0] = '0';
+	}
+	if (in % (2 << 15) == 0) {
+		buffer[1] = '1';
+	} else {
+		buffer[1] = '0';
+	}
+	if (in % (2 << 14) == 0) {
+		buffer[2] = '1';
+	} else {
+		buffer[2] = '0';
+	}
+	if (in % (2 << 13) == 0) {
+		buffer[3] = '1';
+	} else {
+		buffer[3] = '0';
+	}
+	if (in % (2 << 12) == 0) {
+		buffer[4] = '1';
+	} else {
+		buffer[4] = '0';
+	}
+	if (in % (2 << 11) == 0) {
+		buffer[5] = '1';
+	} else {
+		buffer[5] = '0';
+	}
+	if (in % (2 << 10) == 0) {
+		buffer[6] = '1';
+	} else {
+		buffer[6] = '0';
+	}
+	if (in % (2 << 9) == 0) {
+		buffer[7] = '1';
+	} else {
+		buffer[7] = '0';
+	}
+	if (in % (2 << 8) == 0) {
+		buffer[8] = '1';
+	} else {
+		buffer[8] = '0';
+	}
+	if (in % (2 << 7) == 0) {
+		buffer[9] = '1';
+	} else {
+		buffer[9] = '0';
+	}
+	if (in % (2 << 6) == 0) {
+		buffer[10] = '1';
+	} else {
+		buffer[10] = '0';
+	}
+	if (in % (2 << 5) == 0) {
+		buffer[11] = '1';
+	} else {
+		buffer[11] = '0';
+	}
+	if (in % (2 << 4) == 0) {
+		buffer[12] = '1';
+	} else {
+		buffer[12] = '0';
+	}
+	if (in % (2 << 3) == 0) {
+		buffer[13] = '1';
+	} else {
+		buffer[13] = '0';
+	}
+	if (in % (2 << 2) == 0) {
+		buffer[14] = '1';
+	} else {
+		buffer[14] = '0';
+	}
+	if (in % 2 == 0) {
+		buffer[15] = '1';
+	} else {
+		buffer[15] = '0';
+	}
+	buffer[16] = '\0';
+	char *ptr = buffer;
+	return ptr;
+}
+
 char *get_value(symbol_table_t *st, char *key) {
 	if (!st || !key) return NULL;
 
@@ -115,6 +202,9 @@ int main() {
 		} else {
 			printf("THIS IS A C-INSTRUCTION\n");
 		}
+		char *binary = int_to_binary(32768);
+		printf("Hello World\n");
+		printf("%s", binary);
 
 	}
 	
