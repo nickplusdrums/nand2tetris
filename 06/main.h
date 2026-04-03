@@ -11,3 +11,4 @@ symbol_table_t *new_symbol_table(void);
 void add_symbol(symbol_table_t *st, char *key, char *value);
 bool is_in_table(symbol_table_t *st, char *key);
 char *get_value(symbol_table_t *st, char* key);
+char *int_to_binary(int in);
